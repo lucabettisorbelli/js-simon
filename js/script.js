@@ -24,21 +24,52 @@ listaArray.style.fontSize = "24px";
 // timer 10 secondi poi scompaiono
 // prompt, uno alla volta, numeri visualizzati dopo 10 secondi
 
-let numeriUtente = [];
-setTimeout (function () {
+let numeriInseriti = [];
+setTimeout(function () {
 
     listaArray.style.display = "none";
 
-    numeriUtente = [
-    parseInt(prompt("primo numero")),
-    parseInt(prompt("secondo numero")),
-    parseInt(prompt("terzo numero")),
-    parseInt(prompt("quarto numero")),
-    parseInt(prompt("quinto numero")),
+    numeriInseriti = [
+        parseInt(prompt("primo numero")),
+        parseInt(prompt("secondo numero")),
+        parseInt(prompt("terzo numero")),
+        parseInt(prompt("quarto numero")),
+        parseInt(prompt("quinto numero")),
     ];
 
-    console.log(numeriUtente);
-    
+    console.log(numeriInseriti);
+    let numeriUtente = document.querySelector(".numeriUtente");
+    numeriUtente.innerText = numeriInseriti;
+    numeriUtente.style.textAlign = "center";
+    numeriUtente.style.fontSize = "24px";
+
+
+    let tuttiUguali = true;
+    for (let i = 0; i < arrayNumeri.length; i++) {
+        if (arrayNumeri[i] !== numeriInseriti[i]) {
+            tuttiUguali = false;
+        }
+    }
+
+        if (tuttiUguali) {
+            console.log("i numeri inseriti sono tutti giusti");
+        } else {
+            for (let i = 0; i < arrayNumeri.length; i++) {
+                if (arrayNumeri[i] !== numeriInseriti[i]) {
+                    tuttiUguali = false;
+                }
+            if (arrayNumeri[i] === numeriInseriti[i]) {
+                console.log(`il numero ${arrayNumeri[i]} è corretto`);
+            } else {
+                console.log(`il numero ${numeriInseriti[i]} è sbagliato, il numero corretto è ${arrayNumeri[i]}`);
+            }
+        }
+        }
+
+
+
+
 }, 10 * 1000);
 
 //validazione numeri corretti o sbagliati
+
