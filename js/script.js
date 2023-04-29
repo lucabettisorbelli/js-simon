@@ -18,7 +18,20 @@ console.log(arrayNumeri);
 
 let listaArray = document.querySelector(".array");
 listaArray.innerText = arrayNumeri;
-// timer 30 secondi poi scompaiono
+listaArray.style.textAlign ="center";
+listaArray.style.fontSize ="24px";
+
+// timer 10 secondi poi scompaiono
+
+setTimeout (function () {
+
+    listaArray.style.display = "none";
+
+}, 10 * 1000) ;
+
+
+
+
 
 // prompt, uno alla volta, numeri visualizzati
 
