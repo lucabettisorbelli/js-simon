@@ -9,7 +9,11 @@ function numeriRandom(max, min) {
 
         let risultato = Math.floor(Math.random() * (max - min + 1) + min);
 
-        arrayNumeri.push(risultato);
+        if (!arrayNumeri.includes(risultato)) {
+            arrayNumeri.push(risultato);
+        }
+            
+
     }
 }
 
@@ -37,6 +41,11 @@ setTimeout(function () {
     //     parseInt(prompt("quarto numero")),
     //     parseInt(prompt("quinto numero")),
     // ];
+  
+
+}, 10 * 1000);
+
+setTimeout (function () {
     for (let i = 0; i < 5; i++) {
 
         let num = parseInt(prompt(`inserisci il ${i + 1}° numero`));
@@ -99,8 +108,6 @@ setTimeout(function () {
             }
         }
     }
-
-
-}, 10 * 1000);
+}, 11 * 1000)
 
 
